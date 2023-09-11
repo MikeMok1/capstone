@@ -49,10 +49,12 @@ def main():
             predictions = get_prediction(img_array)
             
             # Classify images based on prediction scores
-            classifications = ['Pneumonia' if pred[0] > 0.5 else 'Normal' for pred in predictions]
+            classifications = ['This chest Xray has changes consistent with pneumonia' if pred[0] > 0.5 else 'This is a normal chest Xray' for pred in predictions]
                 
             # Display the classifications
-            st.write(f"Prediction: {classifications[0]} (Score: {predictions[0][0]:.4f})")
+            st.write(f"{classifications[0]}.")
 
 if __name__ == "__main__":
     main()
+
+#Prediction: (Score: {predictions[0][0]:.4f})
